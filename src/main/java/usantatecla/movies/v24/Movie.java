@@ -4,6 +4,9 @@ public class Movie {
 
     private String title;
     private MovieType movieType;
+    private static final int FREQUENT_RENTER_POINTS = 1;
+    private static final int DAYS_RENTED_THRESHOLD = 1;
+    private static final int FREQUENT_RENTER_POINTS_EXTRA = 2; 
 
     public enum MovieType {
         REGULAR, NEW_RELEASE, CHILDREN
@@ -38,12 +41,12 @@ public class Movie {
     public int getFrequentRenterPoints(int daysRented) {
         switch (movieType) {
             case NEW_RELEASE:
-                if (daysRented > 1) {
-                    return 2; // New release gives extra points if rented more than 1 day
+                if (daysRented > DAYS_RENTED_THRESHOLD) {
+                    return FREQUENT_RENTER_POINTS_EXTRA;  
                 }
-                return 1; // Regular points for new release rented for 1 day
+                return FREQUENT_RENTER_POINTS; 
             default:
-                return 1; // Regular movies and children movies always earn 1 point
+                return FREQUENT_RENTER_POINTS; 
         }
     }
 

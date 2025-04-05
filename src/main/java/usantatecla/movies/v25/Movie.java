@@ -20,7 +20,7 @@ public class Movie {
                 return 3.0;
             case CHILDREN:
                 if (daysRented > 3) {
-                    return 1.5 + (daysRented - 1) * 1.5;//3) * 1.5;
+                    return 1.5 + (daysRented - 1) * 1.5;
                 } else {
                     return 1.5;
                 }
