@@ -31,11 +31,11 @@ public class Customer {
 
         while (rentalsIterator.hasNext()) {
             Rental each = rentalsIterator.next();
-            // Cálculo de cargos y puntos
+
             totalCharge += each.getCharge();
             totalFrequentRenterPoints += each.getFrequentRenterPoints();
 
-            result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
+            result += "\t" + each.getMovieTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
         }
 
         result += "Amount owed is " + String.valueOf(totalCharge) + "\n";

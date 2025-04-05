@@ -31,7 +31,7 @@ public class Customer {
 
         while (rentalsIterator.hasNext()) {
             Rental each = rentalsIterator.next();
-            // Cálculo de cargos y puntos
+            
             totalCharge += each.getCharge();
             totalFrequentRenterPoints += each.getFrequentRenterPoints();
 
